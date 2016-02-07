@@ -1,0 +1,296 @@
+<?xml version="1.0" encoding="UTF-8" standalone="yes"?>
+<jpa:entity-mappings xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:java="http://jcp.org/en/jsr/detail?id=270" xmlns:jpa="http://java.sun.com/xml/ns/persistence/orm" status="GENERATED" xs="false" id="_14528762992401" xsi:schemaLocation="http://java.sun.com/xml/ns/persistence/orm orm_2_1.xsd">
+    <jpa:entity xre="false" compositePrimaryKeyType="NONE" sm="false" abs="false" class="Category" visibile="true" minimized="false" rootElement="_14528762992401" id="_14528762993184">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="name" id="_14528762993496">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="name"/>
+            </basic>
+            <one-to-many mapped-by="category" collection-type="java.util.List" target-entity="Product" visibile="true" name="productList" id="_14528762993497">
+                <cascade>
+                    <jpa:cascade-all/>
+                </cascade>
+            </one-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_14528762993335">
+                <jpa:column name="id"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+                <jpa:sequence-generator name="id"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq name="Category.findAll">
+            <jpa:query>SELECT c FROM Category c</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Category.findById">
+            <jpa:query>SELECT c FROM Category c WHERE c.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Category.findByName">
+            <jpa:query>SELECT c FROM Category c WHERE c.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:table name="category"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="NONE" sm="false" abs="false" class="Customer" visibile="true" minimized="false" rootElement="_14528762992401" id="_14528762994278">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="name" id="_145287629942710">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="name"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="email" id="_145287629942711">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="email"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="phone" id="_145287629942712">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="phone"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="mobile" id="_145287629942713">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="mobile"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="address" id="_145287629942714">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="address"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="postalCode" id="_145287629942715">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="postal_code"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="email2" id="_145287629942716">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="email2"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="companyName" id="_145287629942717">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="company_name"/>
+            </basic>
+            <one-to-many mapped-by="customer" collection-type="java.util.List" target-entity="CustomerOrder" visibile="true" name="customerOrderList" id="_145287629942718">
+                <cascade>
+                    <jpa:cascade-all/>
+                </cascade>
+            </one-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_14528762994279">
+                <jpa:column name="id"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+                <jpa:sequence-generator name="id"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq name="Customer.findAll">
+            <jpa:query>SELECT c FROM Customer c</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findById">
+            <jpa:query>SELECT c FROM Customer c WHERE c.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByName">
+            <jpa:query>SELECT c FROM Customer c WHERE c.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByEmail">
+            <jpa:query>SELECT c FROM Customer c WHERE c.email = :email</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByPhone">
+            <jpa:query>SELECT c FROM Customer c WHERE c.phone = :phone</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByMobile">
+            <jpa:query>SELECT c FROM Customer c WHERE c.mobile = :mobile</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByAddress">
+            <jpa:query>SELECT c FROM Customer c WHERE c.address = :address</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByPostalCode">
+            <jpa:query>SELECT c FROM Customer c WHERE c.postalCode = :postalCode</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByEmail2">
+            <jpa:query>SELECT c FROM Customer c WHERE c.email2 = :email2</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Customer.findByCompanyName">
+            <jpa:query>SELECT c FROM Customer c WHERE c.companyName = :companyName</jpa:query>
+        </jpa:nq>
+        <jpa:table name="customer"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="NONE" sm="false" abs="false" class="CustomerOrder" visibile="true" minimized="false" rootElement="_14528762992401" id="_145287629947419">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:attributes>
+            <basic attribute-type="Long" visibile="true" name="totalAmount" id="_145287629947421">
+                <jpa:column name="total_amount"/>
+            </basic>
+            <basic attribute-type="Integer" visibile="true" name="invoiceNo" id="_145287629947422">
+                <jpa:column name="invoice_no"/>
+            </basic>
+            <basic attribute-type="Boolean" visibile="true" name="quotation" id="_145287629947423">
+                <jpa:column name="quotation"/>
+            </basic>
+            <basic attribute-type="Long" visibile="true" name="finalAmount" id="_145287629947424">
+                <jpa:column name="final_amount"/>
+            </basic>
+            <basic attribute-type="Long" visibile="true" name="discount" id="_145287629947425">
+                <jpa:column name="discount"/>
+            </basic>
+            <one-to-many mapped-by="customerOrder" collection-type="java.util.List" target-entity="OrderedProduct" visibile="true" name="orderedProductList" id="_145287629948927">
+                <cascade>
+                    <jpa:cascade-all/>
+                </cascade>
+            </one-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145287629947420">
+                <jpa:column name="id"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+                <jpa:sequence-generator name="id"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq name="CustomerOrder.findAll">
+            <jpa:query>SELECT c FROM CustomerOrder c</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findById">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findByTotalAmount">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.totalAmount = :totalAmount</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findByInvoiceNo">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.invoiceNo = :invoiceNo</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findByQuotation">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.quotation = :quotation</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findByFinalAmount">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.finalAmount = :finalAmount</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="CustomerOrder.findByDiscount">
+            <jpa:query>SELECT c FROM CustomerOrder c WHERE c.discount = :discount</jpa:query>
+        </jpa:nq>
+        <jpa:table name="customer_order"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="EMBEDDEDID" compositePrimaryKeyClass="OrderedProductPK" sm="false" abs="false" class="OrderedProduct" visibile="true" minimized="false" rootElement="_14528762992401" id="_145287629952028">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:attributes>
+            <basic attribute-type="Short" visibile="true" name="quantity" id="_145287629952030">
+                <jpa:column name="quantity"/>
+            </basic>
+            <jpa:id attribute-type="int" visibile="true" name="productid" id="_145287629952033">
+                <annotation>
+                    <name>javax.validation.constraints.NotNull</name>
+                </annotation>
+                <jpa:column name="Product_id"/>
+                <jpa:sequence-generator name="Product_id"/>
+            </jpa:id>
+            <jpa:id attribute-type="int" visibile="true" name="customerOrderId" id="_145287629952034">
+                <annotation>
+                    <name>javax.validation.constraints.NotNull</name>
+                </annotation>
+                <jpa:column name="customer_order_id"/>
+                <jpa:sequence-generator name="customer_order_id"/>
+            </jpa:id>
+            <jpa:embedded-id attribute-type="OrderedProductPK" visibile="true" name="orderedProductPK" id="_145287629952029"/>
+        </jpa:attributes>
+        <jpa:nq name="OrderedProduct.findAll">
+            <jpa:query>SELECT o FROM OrderedProduct o</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="OrderedProduct.findByProductid">
+            <jpa:query>SELECT o FROM OrderedProduct o WHERE o.orderedProductPK.productid = :productid</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="OrderedProduct.findByCustomerOrderId">
+            <jpa:query>SELECT o FROM OrderedProduct o WHERE o.orderedProductPK.customerOrderId = :customerOrderId</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="OrderedProduct.findByQuantity">
+            <jpa:query>SELECT o FROM OrderedProduct o WHERE o.quantity = :quantity</jpa:query>
+        </jpa:nq>
+        <jpa:table name="ordered_product"/>
+    </jpa:entity>
+    <jpa:entity xre="false" compositePrimaryKeyType="NONE" sm="false" abs="false" class="Product" visibile="true" minimized="false" rootElement="_14528762992401" id="_145287629956735">
+        <annotation>@javax.xml.bind.annotation.XmlRootElement</annotation>
+        <jpa:attributes>
+            <basic attribute-type="String" visibile="true" name="name" id="_145287629956737">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="name"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="description" id="_145287629956738">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="description"/>
+            </basic>
+            <basic attribute-type="Long" visibile="true" name="unitPrice" id="_145287629956739">
+                <jpa:column name="unit_price"/>
+            </basic>
+            <basic attribute-type="Long" visibile="true" name="buyingPrice" id="_145287629956740">
+                <jpa:column name="buying_price"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="image" id="_145287629956741">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="image"/>
+            </basic>
+            <basic attribute-type="String" visibile="true" name="additionalInfo" id="_145287629956742">
+                <annotation>
+                    <name>javax.validation.constraints.Size</name>
+                </annotation>
+                <jpa:column name="additional_info"/>
+            </basic>
+            <basic attribute-type="java.util.Date" visibile="true" name="lastUpdate" id="_145287629956743">
+                <jpa:column name="last_update"/>
+                <jpa:temporal>TIMESTAMP</jpa:temporal>
+            </basic>
+            <one-to-many mapped-by="product" collection-type="java.util.List" target-entity="OrderedProduct" visibile="true" name="orderedProductList" id="_145287629956745">
+                <cascade>
+                    <jpa:cascade-all/>
+                </cascade>
+            </one-to-many>
+            <jpa:id attribute-type="Integer" visibile="true" name="id" id="_145287629956736">
+                <jpa:column name="id"/>
+                <jpa:generated-value strategy="IDENTITY"/>
+                <jpa:sequence-generator name="id"/>
+            </jpa:id>
+        </jpa:attributes>
+        <jpa:nq name="Product.findAll">
+            <jpa:query>SELECT p FROM Product p</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findById">
+            <jpa:query>SELECT p FROM Product p WHERE p.id = :id</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByName">
+            <jpa:query>SELECT p FROM Product p WHERE p.name = :name</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByDescription">
+            <jpa:query>SELECT p FROM Product p WHERE p.description = :description</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByUnitPrice">
+            <jpa:query>SELECT p FROM Product p WHERE p.unitPrice = :unitPrice</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByBuyingPrice">
+            <jpa:query>SELECT p FROM Product p WHERE p.buyingPrice = :buyingPrice</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByImage">
+            <jpa:query>SELECT p FROM Product p WHERE p.image = :image</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByAdditionalInfo">
+            <jpa:query>SELECT p FROM Product p WHERE p.additionalInfo = :additionalInfo</jpa:query>
+        </jpa:nq>
+        <jpa:nq name="Product.findByLastUpdate">
+            <jpa:query>SELECT p FROM Product p WHERE p.lastUpdate = :lastUpdate</jpa:query>
+        </jpa:nq>
+        <jpa:table name="product"/>
+    </jpa:entity>
+    <jpa:diagram id="_14528762992552">
+        <plane elementRef="_14528762992401" id="_14528762992553_p"/>
+    </jpa:diagram>
+</jpa:entity-mappings>

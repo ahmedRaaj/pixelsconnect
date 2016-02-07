@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml"
+      xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+      xmlns:h="http://xmlns.jcp.org/jsf/html"
+      xmlns:f="http://xmlns.jcp.org/jsf/core">
+
+    <ui:composition template="/template.xhtml">
+        <ui:define name="title">
+            <h:outputText value="#{bundle.CreateCustomerOrderTitle}"></h:outputText>
+        </ui:define>
+        <ui:define name="body">
+            <h:panelGroup id="messagePanel" layout="block">
+                <h:messages errorStyle="color: red" infoStyle="color: green" layout="table"/>
+            </h:panelGroup>
+            <h:form>
+                <h:panelGrid columns="2">
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_id}" for="id" />
+                    <h:inputText id="id" value="#{customerOrderController.selected.id}" title="#{bundle.CreateCustomerOrderTitle_id}" required="true" requiredMessage="#{bundle.CreateCustomerOrderRequiredMessage_id}"/>
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_totalAmount}" for="totalAmount" />
+                    <h:inputText id="totalAmount" value="#{customerOrderController.selected.totalAmount}" title="#{bundle.CreateCustomerOrderTitle_totalAmount}" />
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_invoiceNo}" for="invoiceNo" />
+                    <h:inputText id="invoiceNo" value="#{customerOrderController.selected.invoiceNo}" title="#{bundle.CreateCustomerOrderTitle_invoiceNo}" />
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_quotation}" for="quotation" />
+                    <h:inputText id="quotation" value="#{customerOrderController.selected.quotation}" title="#{bundle.CreateCustomerOrderTitle_quotation}" />
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_finalAmount}" for="finalAmount" />
+                    <h:inputText id="finalAmount" value="#{customerOrderController.selected.finalAmount}" title="#{bundle.CreateCustomerOrderTitle_finalAmount}" />
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_discount}" for="discount" />
+                    <h:inputText id="discount" value="#{customerOrderController.selected.discount}" title="#{bundle.CreateCustomerOrderTitle_discount}" />
+                    <h:outputLabel value="#{bundle.CreateCustomerOrderLabel_customer}" for="customer" />
+                    <h:selectOneMenu id="customer" value="#{customerOrderController.selected.customer}" title="#{bundle.CreateCustomerOrderTitle_customer}" required="true" requiredMessage="#{bundle.CreateCustomerOrderRequiredMessage_customer}">
+                        <f:selectItems value="#{customerController.itemsAvailableSelectOne}"/>
+                    </h:selectOneMenu>
+                </h:panelGrid>
+                <br />
+                <h:commandLink action="#{customerOrderController.create}" value="#{bundle.CreateCustomerOrderSaveLink}" />
+                <br />
+                <br />
+                <h:commandLink action="#{customerOrderController.prepareList}" value="#{bundle.CreateCustomerOrderShowAllLink}" immediate="true"/>
+                <br />
+                <br />
+                <h:link outcome="/index" value="#{bundle.CreateCustomerOrderIndexLink}"/>
+            </h:form>
+        </ui:define>
+    </ui:composition>
+
+</html>
