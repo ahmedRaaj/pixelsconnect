@@ -76,6 +76,9 @@ public class Product implements Serializable {
     private Category category;
     @OneToMany(cascade = CascadeType.ALL, mappedBy = "product")
     private List<OrderedProduct> orderedProductList;
+    
+    @ManyToOne
+    private Supplier supplier;
 
     public Product() {
     }
@@ -164,6 +167,16 @@ public class Product implements Serializable {
     public void setOrderedProductList(List<OrderedProduct> orderedProductList) {
         this.orderedProductList = orderedProductList;
     }
+
+    public Supplier getSupplier() {
+        return supplier;
+    }
+
+    public void setSupplier(Supplier supplier) {
+        this.supplier = supplier;
+    }
+    
+    
 
     @Override
     public int hashCode() {
